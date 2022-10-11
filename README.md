@@ -10,5 +10,4 @@ discordは日本語が少ないので、なにかの手助けになると幸い�
 ## 環境変数
 TALK_BOT_TOKENにbotのtoken,TALK_BOT_CLIENT_IDにbotのチャンネルID,TALK_API_KEYにA3RTのtalk APIのライセンスキーを代入してご使用ください。
 ## 参考
-
-https://qiita.com/anomeme/items/4863d131e228b22dbab8
+[【Ruby】discordの対話botを作成する](https://qiita.com/anomeme/items/4863d131e228b22dbab8)
