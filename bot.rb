@@ -10,13 +10,13 @@ talkapi_url = "https://api.a3rt.recruit.co.jp/talk/v1/smalltalk"
 bot = Discordrb::Commands::CommandBot.new(
     token: BOT_TOKEN,
     client_id: BOT_CLIENT_ID,
-    prefix: "$"
+    prefix: "talk"
 )
 
 bot.mention do |event|
     #メッセージの取得とメンション部分の削除
     message = event.message.content
-    message = message.delete("<#{BOT_CLIENT_ID}> ")
+    message = message.delete("<@#{BOT_CLIENT_ID}> ")
     p message
 
     #API通信
@@ -30,7 +30,15 @@ bot.mention do |event|
     result = JSON.parse(res.body)
 
     #レスポンスの取得
-    message = result["status"] == 0 ? result["results"][0]["reply"] : "error#{result["status"]}\r\nmessege#{result["message"]}";
+#    message = result["status"] == 0 ? result["results"][0]["reply"] : "error#{result["status"]}\r\nmessege#{result["message"]}";
+
+    if result["status"] == 0 then
+        message = result["results"][0]["reply"]
+    elsif result["status"] == 2000 then
+        message = "すみません、よくわかりません"
+    else
+        message = "error#{result["status"]}\r\nmessege#{result["message"]}";
+    end
 
     event.respond message
 end
