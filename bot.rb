@@ -10,7 +10,7 @@ talkapi_url = "https://api.a3rt.recruit.co.jp/talk/v1/smalltalk"
 bot = Discordrb::Commands::CommandBot.new(
     token: BOT_TOKEN,
     client_id: BOT_CLIENT_ID,
-    prefix: "talk"
+    prefix: "T"
 )
 
 bot.mention do |event|
