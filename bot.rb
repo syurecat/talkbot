@@ -3,8 +3,9 @@ require 'uri' #HTTP通信をするため追加
 
 BOT_TOKEN = ENV["TALK_BOT_TOKEN"]
 BOT_CLIENT_ID = ENV["TALK_BOT_CLIENT_ID"]
-TALK_API_KEY = ENV["TALK_API_KEY"]
-talkapi_url = "https://api.a3rt.recruit.co.jp/talk/v1/smalltalk" 
+TALK_API_KEY = ENV["MIIBO_API_KEY"]
+TALK_AGENT_ID = ENV["MIIBO_AGENT_ID"]
+miibo_api_url = "https://api-mebo.dev/api" 
 
 #botのセットアップ
 bot = Discordrb::Commands::CommandBot.new(
